@@ -8,7 +8,8 @@ namespace FizzBuzz
 {
     class Program
     {
-        // 2.Build a fizz buzz program between the numbers 0 and 100 https://en.wikipedia.org/wiki/Fizz_buzz
+        // 2.Build a fizz buzz program between the numbers 
+        // 0 and 100 https://en.wikipedia.org/wiki/Fizz_buzz
         static void Main(string[] args)
         {
             for (int i = 0; i <= 100; i++)
