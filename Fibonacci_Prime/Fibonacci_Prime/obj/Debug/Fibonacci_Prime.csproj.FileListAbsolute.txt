@@ -1,0 +1,6 @@
+C:\Code\Windows\Fibonacci_Prime\Fibonacci_Prime\bin\Debug\Fibonacci_Prime.exe.config
+C:\Code\Windows\Fibonacci_Prime\Fibonacci_Prime\obj\Debug\Fibonacci_Prime.csprojResolveAssemblyReference.cache
+C:\Code\Windows\Fibonacci_Prime\Fibonacci_Prime\bin\Debug\Fibonacci_Prime.exe
+C:\Code\Windows\Fibonacci_Prime\Fibonacci_Prime\bin\Debug\Fibonacci_Prime.pdb
+C:\Code\Windows\Fibonacci_Prime\Fibonacci_Prime\obj\Debug\Fibonacci_Prime.exe
+C:\Code\Windows\Fibonacci_Prime\Fibonacci_Prime\obj\Debug\Fibonacci_Prime.pdb

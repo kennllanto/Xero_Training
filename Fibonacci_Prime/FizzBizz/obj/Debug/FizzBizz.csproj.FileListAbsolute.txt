@@ -1,0 +1,6 @@
+C:\Code\Windows\Fibonacci_Prime\FizzBizz\bin\Debug\FizzBizz.exe.config
+C:\Code\Windows\Fibonacci_Prime\FizzBizz\bin\Debug\FizzBizz.exe
+C:\Code\Windows\Fibonacci_Prime\FizzBizz\bin\Debug\FizzBizz.pdb
+C:\Code\Windows\Fibonacci_Prime\FizzBizz\obj\Debug\FizzBizz.exe
+C:\Code\Windows\Fibonacci_Prime\FizzBizz\obj\Debug\FizzBizz.pdb
+C:\Code\Windows\Fibonacci_Prime\FizzBizz\obj\Debug\FizzBizz.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Code\Windows\Fibonacci_Prime\Prime\bin\Debug\Prime.exe.config
+C:\Code\Windows\Fibonacci_Prime\Prime\bin\Debug\Prime.exe
+C:\Code\Windows\Fibonacci_Prime\Prime\bin\Debug\Prime.pdb
+C:\Code\Windows\Fibonacci_Prime\Prime\obj\Debug\Prime.exe
+C:\Code\Windows\Fibonacci_Prime\Prime\obj\Debug\Prime.pdb

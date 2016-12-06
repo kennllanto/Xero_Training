@@ -1,0 +1,6 @@
+C:\Code\Windows\Fibonacci_Prime\RandomNumberGame\bin\Debug\RandomNumberGame.exe.config
+C:\Code\Windows\Fibonacci_Prime\RandomNumberGame\bin\Debug\RandomNumberGame.exe
+C:\Code\Windows\Fibonacci_Prime\RandomNumberGame\bin\Debug\RandomNumberGame.pdb
+C:\Code\Windows\Fibonacci_Prime\RandomNumberGame\obj\Debug\RandomNumberGame.csprojResolveAssemblyReference.cache
+C:\Code\Windows\Fibonacci_Prime\RandomNumberGame\obj\Debug\RandomNumberGame.exe
+C:\Code\Windows\Fibonacci_Prime\RandomNumberGame\obj\Debug\RandomNumberGame.pdb
