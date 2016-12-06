@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FizzBizz")]
+[assembly: AssemblyTitle("FizzBuzz")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Xero")]
-[assembly: AssemblyProduct("FizzBizz")]
+[assembly: AssemblyProduct("FizzBuzz")]
 [assembly: AssemblyCopyright("Copyright © Xero 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

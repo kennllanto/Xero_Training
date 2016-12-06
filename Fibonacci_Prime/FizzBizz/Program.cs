@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FizzBizz
+namespace FizzBuzz
 {
     class Program
     {
@@ -16,19 +16,20 @@ namespace FizzBizz
                 if (((i % 3) == 0) && ((i % 5) == 0) )
                 {
                     Console.WriteLine("FizzBuzz");
+                    continue;
                 }
-                else if ( (i % 3) == 0 )
+                if ( (i % 3) == 0 )
                 {
                     Console.WriteLine("Fizz");
+                    continue;
                 }
-                else if ((i % 5) == 0)
+                if ((i % 5) == 0)
                 {
                     Console.WriteLine("Buzz");
+                    continue;
                 }
-                else
-                {
-                    Console.WriteLine(i);
-                }
+                Console.WriteLine(i);
+                
                 
             }
             Console.ReadKey();
