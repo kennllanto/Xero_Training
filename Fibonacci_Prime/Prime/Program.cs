@@ -25,8 +25,8 @@ namespace Prime
         }
         static bool isPrime(int iNum)
         {
-            double iSqRoot = Math.Sqrt(iNum);
-            for (int i = 2; i <= iSqRoot; i++)
+            double dblSqRoot = Math.Sqrt(iNum);
+            for (int i = 2; i <= dblSqRoot; i++)
             {
                 int iRem = iNum % i;
                 if (iRem == 0)

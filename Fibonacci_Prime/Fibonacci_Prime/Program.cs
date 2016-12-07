@@ -14,17 +14,17 @@ namespace Fibonacci_Prime
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            int iPrev = 1;
-            int iCur = 1;
+            int Previous = 1;
+            int Current = 1;
             for (int i = 1; i <= 100; /* do nothing */)
             {
                 if((isPrime(i)) && (i > 1))
                 {
                    Console.WriteLine("{0}", i);
                 }
-                i = iCur + iPrev;
-                iPrev = iCur;
-                iCur = i;
+                i = Current + Previous;
+                Previous = Current;
+                Current = i;
 
                 //Console.WriteLine("{0}", i);
             }
@@ -39,8 +39,8 @@ namespace Fibonacci_Prime
         /// <returns></returns>
         static bool isPrime(int iNum)
         {
-            double iSqRoot = Math.Sqrt(iNum);
-            for (int i = 2; i <= iSqRoot; i++)
+            double SquareRoot = Math.Sqrt(iNum);
+            for (int i = 2; i <= SquareRoot; i++)
             {
                 int iRem = iNum % i;
                 if(iRem == 0)
