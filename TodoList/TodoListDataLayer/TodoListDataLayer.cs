@@ -11,7 +11,7 @@ namespace TodoListDataLayer
     {
         private enum updateType
         {
-            append , replaceAll 
+            append , replaceAll , deleteAll
         }
         private List<string> fileContents = new List<string>();
         const string toDoListFileName = "todolist.txt";
@@ -25,14 +25,10 @@ namespace TodoListDataLayer
                 string[] lines = File.ReadAllLines(filePath);
                 fileContents = lines.ToList();
             }
-            else
-            {
-                // todo
-            }
         }
 
         /// <summary>
-        /// 
+        /// Add a task on the todo list file
         /// </summary>
         /// <param name="textToWrite"></param>
         /// <returns></returns>
@@ -47,9 +43,9 @@ namespace TodoListDataLayer
         }
 
         /// <summary>
-        /// 
+        /// Reads the todolist
         /// </summary>
-        /// <returns></returns>
+        /// <returns> List containing all data </returns>
         public List<String> ReadData()
         {
             return fileContents;
@@ -67,6 +63,13 @@ namespace TodoListDataLayer
             return true;
         }
 
+        public bool DeleteAllData()
+        {
+            fileContents.Clear();
+            UpdateToDoList(fileContents, updateType.deleteAll);
+            return true;
+        }
+
         private bool UpdateToDoList(List <string> dataToAdd, updateType updateAction)
         {
             switch (updateAction)
@@ -79,6 +82,10 @@ namespace TodoListDataLayer
                     File.Delete(filePath);
                     //File.Create(filePath + toDoListFileName);
                     File.AppendAllLines(filePath, fileContents);
+                    break;
+
+                case (updateType.deleteAll):
+                    File.Delete(filePath);
                     break;
 
                 default:

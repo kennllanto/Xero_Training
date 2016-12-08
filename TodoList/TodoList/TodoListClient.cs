@@ -44,6 +44,22 @@ namespace TodoList
                         Console.WriteLine("Task Completed.");
                         break;
 
+                    case (ConsoleKey.D):
+                        Console.WriteLine("This will delete your todolist file. Press 'Y' to confirm. ");
+                        input = Console.ReadKey();
+                        Console.WriteLine("");
+                        if (input.Key == ConsoleKey.Y)
+                        {
+                            businessLayer.DeleteAllTasks();
+                            Console.WriteLine("Todolist Deleted.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("");
+                        }
+
+                        break;
+
                     case (ConsoleKey.Q):
                         Console.WriteLine("Goodbye!");
                         runToDoList = false;
@@ -51,10 +67,11 @@ namespace TodoList
 
                     default:
                         Console.WriteLine("Invalid input. Please try again. ");
-                        printOptions();
+
                         break;
 
                 }
+                printOptions();
                 input = Console.ReadKey();
             } while (runToDoList);
         }
@@ -66,6 +83,7 @@ namespace TodoList
             Console.WriteLine("X  r - read current your to do list                                 X");
             Console.WriteLine("X  a - add a new task                                               X");
             Console.WriteLine("X  c - complete a task and remove from your list                    X");
+            Console.WriteLine("X  d - delete your lists                                            X");
             Console.WriteLine("X  q - to quit                                                      X");
             Console.WriteLine("---------------------------------------------------------------------");
         }
