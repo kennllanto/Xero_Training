@@ -23,19 +23,25 @@ namespace TodoList
                 switch (input.Key)
                 {
                     case (ConsoleKey.R):
-                        Console.WriteLine(businessLayer.ReadList().ToString());
+                        Console.WriteLine("---------------------------------------------------------------------");
+                        Console.WriteLine("Current todo list:");
+                        foreach (var task in businessLayer.ReadList())
+                        {
+                            Console.WriteLine(task);
+                        }
+                        Console.WriteLine("---------------------------------------------------------------------");
                         break;
 
                     case (ConsoleKey.A):
-                        Console.Write("Enter task to be added:");
+                        Console.Write("Enter task to be added: ");
                         businessLayer.AddTask(Console.ReadLine());
-                        Console.WriteLine();
+                        Console.WriteLine("Task Added.");
                         break;
 
                     case (ConsoleKey.C):
-                        Console.Write("Enter task to be completed:");
+                        Console.Write("Enter task to be completed: ");
                         businessLayer.DeleteTask(Console.ReadLine());
-                        Console.WriteLine();
+                        Console.WriteLine("Task Completed.");
                         break;
 
                     case (ConsoleKey.Q):
@@ -44,7 +50,7 @@ namespace TodoList
                         break;
 
                     default:
-                        Console.WriteLine("Invalid input");
+                        Console.WriteLine("Invalid input. Please try again. ");
                         printOptions();
                         break;
 
@@ -55,11 +61,13 @@ namespace TodoList
 
         public static void printOptions()
         {
-            Console.WriteLine("Here are your options:");
-            Console.WriteLine("r - read current your to do list");
-            Console.WriteLine("a - add a new task");
-            Console.WriteLine("c - complete a task and remove from your list");
-            Console.WriteLine("q - to quit");
+            Console.WriteLine("---------------------------------------------------------------------");
+            Console.WriteLine("X  Here are your options:                                           X");
+            Console.WriteLine("X  r - read current your to do list                                 X");
+            Console.WriteLine("X  a - add a new task                                               X");
+            Console.WriteLine("X  c - complete a task and remove from your list                    X");
+            Console.WriteLine("X  q - to quit                                                      X");
+            Console.WriteLine("---------------------------------------------------------------------");
         }
     }
 }
