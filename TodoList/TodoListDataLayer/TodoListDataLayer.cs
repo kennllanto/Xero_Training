@@ -9,14 +9,26 @@ namespace TodoListDataLayer
 {
     public class TodoListDataLayer
     {
-        private List<string> fileContents;
+        private enum updateType
+        {
+            append , replaceAll 
+        }
+        private List<string> fileContents = new List<string>();
         const string toDoListFileName = "todolist.txt";
+        static string fileFolder = Directory.GetCurrentDirectory();
+        string filePath = fileFolder + "\\" + toDoListFileName;
 
         public TodoListDataLayer()
         {
-            string path = Directory.GetCurrentDirectory();
-            string[] lines = File.ReadAllLines(path + toDoListFileName);
-            fileContents =  lines.ToList();
+            if (File.Exists(filePath))
+            {
+                string[] lines = File.ReadAllLines(filePath);
+                fileContents = lines.ToList();
+            }
+            else
+            {
+                // todo
+            }
         }
 
         /// <summary>
@@ -24,15 +36,13 @@ namespace TodoListDataLayer
         /// </summary>
         /// <param name="textToWrite"></param>
         /// <returns></returns>
-        public bool StoreData(string textToWrite)
+        public bool StoreData(string taskToWrite)
         {
-            StreamWriter streamWriter = new StreamWriter(fileStream, Encoding.UTF8);
-            streamWriter.WriteLine(textToWrite);
-            streamWriter.Flush();
-            streamWriter.Close();
-            fileStream.Close();
+            List<string> temporaryList = new List<string>();
+            temporaryList.Add(taskToWrite);            
 
-            fileStream.Open
+            fileContents.Add(taskToWrite);
+            UpdateToDoList(temporaryList, updateType.append);
             return true;
         }
 
@@ -40,15 +50,40 @@ namespace TodoListDataLayer
         /// 
         /// </summary>
         /// <returns></returns>
-        public bool ReadData()
+        public List<String> ReadData()
         {
-            StreamReader r = new StreamReader(fs, Encoding.UTF8);
-            Console.WriteLine(r.ReadLine());
+            return fileContents;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="taskTobeDeleted"></param>
+        /// <returns></returns>
+        public bool DeleteData(string taskTobeDeleted)
+        {
+            fileContents.Remove(taskTobeDeleted);
+            UpdateToDoList(fileContents, updateType.replaceAll);
             return true;
         }
 
-        public bool DeleteData()
+        private bool UpdateToDoList(List <string> dataToAdd, updateType updateAction)
         {
+            switch (updateAction)
+            {
+                case (updateType.append):
+                    File.AppendAllLines(filePath, fileContents);
+                    break;
+
+                case (updateType.replaceAll):
+                    File.Delete(filePath);
+                    //File.Create(filePath + toDoListFileName);
+                    File.AppendAllLines(filePath, fileContents);
+                    break;
+
+                default:
+                    throw new Exception("Invalid action for UpdateDate()");
+            }
             return true;
         }
 
