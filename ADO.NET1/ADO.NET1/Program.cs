@@ -35,11 +35,10 @@ namespace ADO.NET1
                 new SqlConnection(connectionString))
             {
                 // Create the Command and Parameter objects.
-                //SqlCommand command = new SqlCommand(queryString, connection);
-                //command.Parameters.AddWithValue("@pricePoint", paramValue);
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Parameters.AddWithValue("@pricePoint", paramValue);
 
-                SqlCommand command = new SqlCommand("SELECT ProductID, UnitPrice, ProductName from dbo.products WHERE UnitPrice > 5 ORDER BY UnitPrice DESC;", connection);
-               
+                
                 // Open the connection in a try/catch block. 
                 // Create and execute the DataReader, writing the result
                 // set to the console window.
@@ -52,7 +51,6 @@ namespace ADO.NET1
                         Console.WriteLine("\t{0}\t{1}\t{2}",
                             reader[0], reader[1], reader[2]);
 
-                        //Console.WriteLine("\t{0}", reader[0]);
                     }
                     reader.Close();
                 }
