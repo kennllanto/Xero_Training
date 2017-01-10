@@ -20,7 +20,8 @@ namespace TodoListBusinessLayer
             try
             {
                 List<string> toDoListContents = dataLayerObject.ReadData();
-                if(toDoListContents == null)
+                // If there are no items in the to do list return a list with string informing the user that there are no tasks
+                if(toDoListContents.Count == 0)
                 {
                     return blankList;
                 }
@@ -34,13 +35,14 @@ namespace TodoListBusinessLayer
         }
 
         /// <summary>
-        /// 
+        /// Add a new task in todo list
         /// </summary>
         /// <param name="taskToAdd"></param>
         public void AddTask(string taskToAdd)
         {
             try
             {
+                ReadList();
                 dataLayerObject.StoreData(taskToAdd);
                 return;
             }
@@ -49,7 +51,32 @@ namespace TodoListBusinessLayer
                 Console.WriteLine("An error occured while adding a new task: '{0}'", e);
             }
         }
+ 
+        /// <summary>
+        /// Delete your todo list
+        /// </summary>
+        public void DeleteAllTasks()
+        {
+            try
+            {
+                List<string> toDoListContents = dataLayerObject.ReadData();
+                if(toDoListContents.Count != 0)
+                {
+                    dataLayerObject.DeleteAllData();
+                }
+                
+                return;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error occurred while deleting a task: '{0}'", e);
+            }
+        }
 
+        /// <summary>
+        /// Delete a task
+        /// </summary>
+        /// <param name="taskToDelete"></param>
         public void DeleteTask(string taskToDelete)
         {
             try
